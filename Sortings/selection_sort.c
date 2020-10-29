@@ -6,13 +6,13 @@ void selection_sort(int *Arr, int size)
 {
 	int max;
 	int max_index;
-	bool flag = false;
+	bool flag;
 	
 	while(size>1)
 	{
 		max = Arr[size-1];
 		max_index = size-1;
-		flag = true;
+		flag = false;
 		
 		
 		for(int i=0;i<size;i++)
@@ -21,11 +21,11 @@ void selection_sort(int *Arr, int size)
 			{
 				max = Arr[i];
 				max_index = i;
-				flag = false;
+				flag = true;
 			}
 		}	
 		
-		if(!flag)
+		if(flag)
 		{
 			Arr[size-1]    ^= Arr[max_index];
 			Arr[max_index] ^= Arr[size-1];
